@@ -46,11 +46,11 @@ This theme is compatible with modified Discord clients that support custom CSS i
 1. Open User Settings in Discord.
 2. Scroll down to the Vencord section and select Themes.
 3. Paste the RAW link of this repository into the theme URL field:
-`https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPOSITORY/main/sweet-rose-dream.theme.css`
+`https://raw.githubusercontent.com/Sk3tch1/Sweet-Rose-Dream-Discord/main/sweet-rose-dream.theme.css`
 4. Press Enter. The theme will apply instantly.
 
 **Option 2: Manual Installation (BetterDiscord)**
-1. Download the `sweet-rose-dream.theme.css` file from the Releases section or by cloning this repository.
+1. Download the `Sweet Rosé Dream.css` file from the Releases section or by cloning this repository.
 2. Open Discord and go to User Settings > Themes (under the BetterDiscord section).
 3. Click Open Theme Folder.
 4. Move the downloaded `.css` file into that folder.
@@ -67,7 +67,7 @@ This theme is compatible with modified Discord clients that support custom CSS i
 ![Floating Bar & Details](screenshots/image2.png)
 
 ## Credits and Acknowledgments
-* **Creative Direction & Vision:** [Your Name / Your GitHub Username] - For conceptualizing the Cutecore aesthetic, designing the palette, managing the system layouts, and defining structural workspace declutter targets.
+* **Creative Direction & Vision:** Sk3tch1 - For conceptualizing the Cutecore aesthetic, designing the palette, managing the system layouts, and defining structural workspace declutter targets.
 * **Core Development & Engineering:** Google Gemini Advanced (Pro) - Responsible for the foundational architecture, modular code separation, target selector layouts, layout transition timing, and micro-interaction mechanics.
 * **Refactoring, Polishing & Advanced Optimization:** DeepSeek V4 - Responsible for the massive v9.3.7 surgical refactoring, `!important` optimization sweep, hardware acceleration path adjustments, and WCAG AA accessibility layering compliance.
 * **Typography:** Fuzzy Bubbles hosted via Google Fonts.
