@@ -6,7 +6,7 @@ Sweet Rose Dream Ultimate is more than just a fresh coat of paint. It is a compl
 
 Embracing the Cutecore aesthetic, this theme pairs soft pastel pinks with crystal-clear glassmorphism, rounded typography, and smooth micro-interactions. Every distracting element from the stock app has been stripped away to give you a clean, seamless, and focused experience.
 
-Development Note: 100% of the CSS architecture, debugging, and code optimization was generated and refined by Google Gemini (Advanced / Pro), working in close collaboration with the repository owner’s creative vision and aesthetic direction.
+Development Note: 100% of the CSS architecture, debugging, and code optimization was generated and refined by Google Gemini (Advanced / Pro), working in close collaboration with the repository owner’s creative vision and aesthetic [direction.](screenshots/placeholder.md)
 
 ## Main Features
 **Aesthetic Foundation**
