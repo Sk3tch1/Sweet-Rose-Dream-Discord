@@ -1,54 +1,43 @@
-# Sweet-Rose-Dream-Discord
-Sweet Rosé Dream (v9.3.8) is the peak evolution of cutecore minimalism for Discord. Created in collaboration with AI engineering models, it was born out of a desire for a clean, warm, highly performant, and accessible interface. It blends advanced glassmorphism styles with pastel tones and user-friendly fonts for a relaxing and seamless visual experience.
+# Sk3tch1's Discord Theme Collection
+Welcome to the central repository for my custom Discord themes. Here, I host projects focused on minimalism, extreme code optimization, and cohesive aesthetics. Each theme has been developed through AI-assisted engineering collaboration to ensure fluid performance and a distraction-free visual experience.
 
-## Introduction
-Sweet Rosé Dream Ultimate is more than just a fresh coat of paint. It is a complete structural overhaul of the Discord interface (optimized for Vencord, BetterDiscord, and Vesktop) built to eliminate visual clutter and bring a sense of calm to your daily chats.
+---
 
-Embracing the Cutecore aesthetic, this theme pairs soft pastel pinks with crystal-clear glassmorphism, rounded typography, and smooth micro-interactions. Every distracting element from the stock app has been stripped away to give you a clean, seamless, and focused experience.
+## 🎨 Available Themes
+### 1. Sweet Rosé Dream (Ultimate Edition)
+* **Aesthetic:** Minimalist cutecore, soft glassmorphism, pastel tones.
+* **Focus:** Warmth, accessibility (WCAG AA), and a relaxing visual experience.
+* **Best for:** Users seeking a clean, cute, and highly readable interface.
+* [View full documentation](https://www.google.com/search?q=./README-SWEET-ROSE.md)
 
-Development Note: 100% of the CSS architecture, structural debugging, codebase refactoring, and surgical optimizations have been generated and polished by Google Gemini (Advanced/Pro) and DeepSeek V4, working in close collaboration with the repository owner’s creative vision and aesthetic direction.
+### 2. Monochromatic Void (Darkcore Edition)
+* **Aesthetic:** Brutalist, edgy, monochrome, high contrast.
+* **Focus:** Zero distractions, absolute dark mode (True Black), terminal aesthetic.
+* **Best for:** Users who prefer a serious, minimalist, and technical environment.
+* [View full documentation](https://www.google.com/search?q=./README-MONO-VOID.md)
 
-## Main Features
+---
 
-**Aesthetic Foundation**
-* **Exclusive Palette:** Crisp whites and ultra-soft gray backgrounds (`#fdfafd`) paired with balanced pastel pink accents (`#ed8695`). Features a reactive dark mode layout engineered with deep mauve sub-chromatic tones that keep the cutecore essence perfectly intact.
-* **Charming Typography:** Native integration of Google Fonts' 'Fuzzy Bubbles' across the interface for a cozy, handwritten look.
-* **Smart Readability & WCAG AA Compliance:** Hardcoded font exceptions ensure usernames and nicknames stay in gg sans/Helvetica, maintaining absolute legibility without breaking the theme's vibe. Strict contrast rules are applied to all normal, muted, and linked text fields.
+## 🛠 Technical Specifications
+All themes in this repository share the same development DNA:
 
-**Visual Effects and Glassmorphism**
-* **Translucent Profiles:** User modals, popouts, and profile cards feature blurred, crystal-like backgrounds with finely balanced transparency metrics (`backdrop-filter: blur(12px/14px)`).
-* **Shadows and Depth:** A custom elevation system (`var(--shadow-low, medium, high)`) makes panels float cleanly over the main background with non-intrusive micro-opacities (0.18 in light mode, 0.25 in dark mode).
-* **Universal Border Radii:** Standardized rounded corners applied globally to panels, avatars, modals, and buttons.
+* **Anti-Bloatware Optimization:** Structural removal of commercial elements (Nitro, Shop, Quests).
+* **Code Engineering:** Usage of `CSS Variables`, modern selectors (`:is()`, `:where()`), and a performance-oriented architecture.
+* **Compatibility:** Specifically designed for **Vencord, Vesktop, and BetterDiscord**.
+* **Co-Authorship:** Developed with the support of engineering models from Google Gemini and DeepSeek V4.
 
-**Functional Optimization (Anti-Bloatware)**
-The client interface has been cleaned up at the code level to remove commercial and distracting elements:
-* Hidden the Shop button.
-* Hidden Nitro Quests.
-* Hidden the Nitro Home tab.
-* Hidden the Gift Nitro button inside the chat bar.
-* Hidden the App Launcher / command shortcut button in the message area.
+---
 
-**Micro-Interactions and Animations**
-* **Floating Typing Indicator:** The "User is typing..." bar is now an elegant translucent glass bubble with increased rounded corners and a rich box-shadow that lifts smoothly above the chat via a custom float-up animation.
-* **Dynamic Avatars and Buttons:** Subtle hover animations scale and rotate action buttons slightly for a more tactile, responsive feel. Message overlays feature smooth box-shadow fades to eliminate screen flickering.
-* **Cutecore Scrollbars:** Redesigned scrollbars featuring smooth pastel pink gradients and fully rounded tracks.
+## 🚀 Quick Installation
+You can install any of these themes by using their **RAW** link directly in your Vencord/Vesktop settings:
 
-**Pro Modules and Extras**
-* **Custom Splash Screen:** The default loading screen is replaced by an animated "CUTECORE" text element featuring a continuous, shimmering text-shadow sweep effect.
-* **Pastel Status Indicators:** Standard status colors (Online, Idle, DND, Offline) are swapped out for pleasant pastel shades (`#a8e6cf` for online, `#f8bbd0` for Dnd, etc.).
+1. Go to **User Settings > Vencord > Themes**.
+2. Paste the corresponding link into the **Theme URL** field.
+3. Press `Enter`.
 
-## Installation Guide
-This theme is compatible with modified Discord clients that support custom CSS injection, such as Vencord, Vesktop, or BetterDiscord.
+* **Sweet Rosé Dream:** `[https://raw.githubusercontent.com/Sk3tch1/Sweet-Rose-Dream-Discord/refs/heads/main/sweet-rose-dream.theme.css](https://raw.githubusercontent.com/Sk3tch1/Sweet-Rose-Dream-Discord/refs/heads/main/sweet-rose-dream.theme.css)`
+* **Monochromatic Void:** `[https://raw.githubusercontent.com/Sk3tch1/Sweet-Rose-Dream-Discord/refs/heads/main/monochromatic-void.theme.css](https://raw.githubusercontent.com/Sk3tch1/Sweet-Rose-Dream-Discord/refs/heads/main/monochromatic-void.theme.css)`
 
-**Option 1: URL Installation (Recommended for Vencord/Vesktop)**
-1. Open User Settings in Discord.
-2. Scroll down to the Vencord section and select Themes.
-3. Paste the RAW link of this repository into the theme URL field: `https://raw.githubusercontent.com/Sk3tch1/Sweet-Rose-Dream-Discord/refs/heads/main/sweet-rose-dream.theme.css`
-4. Press Enter. The theme will apply instantly.
+---
 
-**Option 2: Manual Installation (BetterDiscord)**
-1. Download the `Sweet Rosé Dream.css` file from the Releases section or by cloning this repository.
-2. Open Discord and go to User Settings > Themes (under the BetterDiscord section).
-3. Click Open Theme Folder.
-4. Move the downloaded `.css` file into that folder.
-5. Return to Discord and turn on the theme toggle.
+> **Developer Note:** This repository is actively maintained. If you encounter any bugs or wish to suggest an improvement to the CSS architecture, feel free to open an *Issue* on GitHub.
