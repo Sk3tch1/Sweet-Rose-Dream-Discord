@@ -8,13 +8,13 @@ Welcome to the central repository for my custom Discord themes. Here, I host pro
 * **Aesthetic:** Minimalist cutecore, soft glassmorphism, pastel tones.
 * **Focus:** Warmth, accessibility (WCAG AA), and a relaxing visual experience.
 * **Best for:** Users seeking a clean, cute, and highly readable interface.
-* [View full documentation](https://www.google.com/search?q=./README-SWEET-ROSE.md)
+* [View full documentation](./README-SWEET-ROSE.md)
 
 ### 2. Monochromatic Void (Darkcore Edition)
 * **Aesthetic:** Brutalist, edgy, monochrome, high contrast.
 * **Focus:** Zero distractions, absolute dark mode (True Black), terminal aesthetic.
 * **Best for:** Users who prefer a serious, minimalist, and technical environment.
-* [View full documentation](https://www.google.com/search?q=./README-MONO-VOID.md)
+* [View full documentation](./README-MONO-VOID.md)
 
 ---
 
