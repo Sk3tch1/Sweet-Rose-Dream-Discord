@@ -55,16 +55,13 @@ https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPOSITORY/main/sweet-rose-
 
 ## Screenshots
 **General Interface:**
-[Link to Chat and Server List image]
+![General Interface](screenshots/Screenshot_43.png)
 
 **Glassmorphism Profiles:**
-[Link to Profile Modal image]
-
-**Loading Screen:**
-[Link to Loading Screen image]
+![Glassmorphism Profiles](screenshots/image.png)
 
 **Floating Bar & Details:**
-[Link to Typing Indicator and Scrollbars image]
+![Floating Bar & Details](screenshots/image2.png)
 
 ## Credits and Acknowledgments
 * Creative Direction & Vision: [Your Name / Your GitHub Username] - For conceptualizing the Cutecore aesthetic, designing the palette, and deciding exactly which parts of the layout to declutter.
