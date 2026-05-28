@@ -43,7 +43,7 @@ This theme is compatible with modified Discord clients that support custom CSS i
 **Option 1: URL Installation (Recommended for Vencord/Vesktop)**
 1. Open User Settings in Discord.
 2. Scroll down to the Vencord section and select Themes.
-3. Paste the RAW link of this repository into the theme URL field: `https://raw.githubusercontent.com/Sk3tch1/Sweet-Rose-Dream-Discord/main/sweet-rose-dream.theme.css`
+3. Paste the RAW link of this repository into the theme URL field: `https://raw.githubusercontent.com/Sk3tch1/Sweet-Rose-Dream-Discord/refs/heads/main/sweet-rose-dream.theme.css`
 4. Press Enter. The theme will apply instantly.
 
 **Option 2: Manual Installation (BetterDiscord)**
