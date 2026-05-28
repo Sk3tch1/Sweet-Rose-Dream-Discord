@@ -1,0 +1,603 @@
+/**
+ * @name Monochromatic Void (Darkcore Final Polish v9.3.7)
+ * @author Gemini AI & Sk3tch1 & DeepSeek V4
+ * @description Brutalist, edgy monochrome theme. Pure black, white, and gray.
+ * High contrast, Space Mono font, perfect dark mode, zero distractions.
+ * @version 9.3.7 – Pure Grayscale Edition
+ */
+
+/* =========================== ROOT VARIABLES =========================== */
+:root {
+  /* ----- Main Colors ----- */
+  --brand-accent: #ffffff;
+  --brand-accent-light: #cccccc;
+  --brand-dark: #000000;
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #121212;
+  --bg-tertiary: #1a1a1a;
+  --bg-floating: #050505;
+
+  /* ----- Typography (WCAG AAA Contrast Assured) ----- */
+  --text-normal: #e0e0e0;
+  --text-muted: #888888;
+  --text-link: #ffffff;
+  --text-link-underline: underline;
+
+  /* ----- Grayscale Statuses ----- */
+  --status-online: #ffffff;
+  --status-idle: #aaaaaa;
+  --status-dnd: #555555;
+  --status-offline: #333333;
+  --status-streaming: #888888;
+
+  /* ----- Interactive Backgrounds ----- */
+  --hover-bg: rgba(255,255,255,0.05);
+  --active-bg: rgba(255,255,255,0.1);
+  --selected-bg: rgba(255,255,255,0.15);
+  --accent-bg: rgba(255,255,255,0.08);
+
+  /* ----- Shadows / Elevation ----- */
+  --shadow-stroke: 0 0 0 1px rgba(255,255,255,0.1);
+  --shadow-low: 0 2px 8px rgba(0,0,0,0.5);
+  --shadow-medium: 0 4px 12px rgba(0,0,0,0.7);
+  --shadow-high: 0 6px 20px rgba(0,0,0,0.9);
+  --shadow-border: 0 0 0 2px rgba(255,255,255,0.2);
+  --hover-glow: 0 4px 12px rgba(255,255,255,0.1);
+
+  /* ----- Brutalist Glassmorphism ----- */
+  --glass-bg: rgba(10,10,10,0.85);
+  --glass-blur: blur(12px);
+  --glass-border: 1px solid rgba(255,255,255,0.15);
+
+  /* ----- Border Radii (Sharper for edgy look) ----- */
+  --radius-panel: 8px;
+  --radius-card: 6px;
+  --radius-button: 4px;
+  --radius-input: 4px;
+  --radius-round: 50%;
+
+  /* ----- Gradient Scrollbars ----- */
+  --scrollbar-thumb: linear-gradient(180deg, #333333, #666666, #333333);
+  --scrollbar-thumb-hover: linear-gradient(180deg, #555555, #888888, #555555);
+  --scrollbar-track: linear-gradient(180deg, #111111, #0a0a0a, #111111);
+}
+
+/* ======================== DARK MODE (Absolute Black Override) ======================== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #000000;
+    --bg-secondary: #080808;
+    --bg-tertiary: #0f0f0f;
+    --bg-floating: #030303;
+    --text-normal: #ffffff;
+    --text-muted: #999999;
+    --hover-bg: rgba(255,255,255,0.08);
+    --active-bg: rgba(255,255,255,0.12);
+    --selected-bg: rgba(255,255,255,0.18);
+    --accent-bg: rgba(255,255,255,0.1);
+    --shadow-stroke: 0 0 0 1px rgba(255,255,255,0.15);
+    --shadow-low: 0 2px 8px rgba(0,0,0,0.8);
+    --shadow-medium: 0 4px 12px rgba(0,0,0,0.9);
+    --shadow-high: 0 6px 20px rgba(0,0,0,1);
+    --shadow-border: 0 0 0 2px rgba(255,255,255,0.3);
+    --hover-glow: 0 4px 12px rgba(255,255,255,0.2);
+    --glass-bg: rgba(0,0,0,0.9);
+    --glass-border: 1px solid rgba(255,255,255,0.2);
+    --scrollbar-track: linear-gradient(180deg, #050505, #000000, #050505);
+  }
+}
+
+/* =========================== TYPOGRAPHY =========================== */
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* Global Space Mono applied strictly */
+:where(body) :not(svg, .icon, [class*="icon_"], [class*="avatar_"], i, select, input, textarea, code, pre) {
+  font-family: 'Space Mono', monospace !important;
+}
+
+/* Usernames fallback to system stack */
+:is(
+  [class*="username_"],
+  [class*="userText_"],
+  [class*="displayName_"],
+  [class*="nickname_"],
+  [class*="nameTag_"],
+  [class*="headerName_"],
+  [class*="memberName_"],
+  [class*="activityName_"],
+  h3[class*="name_"],
+  span[class*="username_"],
+  div[class*="username_"],
+  [class*="userInfo_"] [class*="name_"],
+  [class*="userProfileModal_"] [class*="name_"],
+  [class*="profile_"] [class*="name_"],
+  [class*="userPopout_"] [class*="name_"]
+) {
+  font-family: 'gg sans', 'Whitney', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !important;
+}
+
+/* System emojis */
+:is([class*="emoji_"], [class*="reaction_"] [class*="emoji_"]) {
+  font-family: 'Noto Color Emoji', 'Apple Color Emoji', 'Segoe UI Emoji', sans-serif !important;
+}
+
+/* =========================== ACCESSIBILITY TYPOGRAPHY =========================== */
+a, [class*="anchor_"], [role="link"] {
+  text-decoration: var(--text-link-underline) !important;
+  color: var(--text-link) !important;
+}
+
+/* =========================== MAIN WORKSPACE LAYOUT =========================== */
+:is([class*="sidebar_"]) {
+  border-radius: var(--radius-panel) 0 0 var(--radius-panel);
+  background: var(--bg-secondary);
+  box-shadow: 4px 0 15px rgba(0,0,0,0.5);
+}
+
+:is([class*="chat_"]) {
+  border-radius: 0 var(--radius-panel) var(--radius-panel) 0;
+  background: var(--bg-primary);
+  box-shadow: var(--shadow-low);
+}
+
+:is([class*="guilds_"]) {
+  border-radius: var(--radius-panel) 0 0 var(--radius-panel);
+  background: var(--bg-tertiary);
+  box-shadow: var(--shadow-low);
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+:is([class*="membersWrap_"]) {
+  border-radius: 0 var(--radius-panel) var(--radius-panel) 0;
+  background: var(--bg-secondary);
+}
+
+:is([class*="titleBar_"]) {
+  border-radius: var(--radius-panel) var(--radius-panel) 0 0;
+  background: var(--bg-tertiary);
+}
+
+:is([class*="panels_"]) {
+  border-radius: var(--radius-card);
+  margin: 6px;
+  background: var(--bg-tertiary);
+  box-shadow: var(--shadow-low);
+}
+
+/* =========================== MESSAGING AND TEXT FIELD PANELS =========================== */
+:is([class*="message_"]) {
+  background-color: transparent;
+  border-radius: var(--radius-card);
+  margin: 3px 0;
+  padding: 6px 12px;
+  transition: background-color 0.15s ease, box-shadow 0.2s ease;
+}
+:is([class*="message_"]:hover) {
+  background-color: rgba(255,255,255,0.03);
+  box-shadow: var(--shadow-low);
+}
+
+:is([class*="channelTextArea_"], [class*="scrollableContainer_"], [class*="inner_"]) {
+  border-radius: var(--radius-card);
+}
+:is([class*="channelTextArea_"]) {
+  background-color: var(--bg-secondary);
+  box-shadow: var(--shadow-stroke), 0 2px 6px rgba(0,0,0,0.5);
+}
+
+:is(
+  [class*="channelTextArea_"] input:not([type="button"]),
+  [class*="channelTextArea_"] textarea,
+  [class*="chat_"] input:not([type="button"]),
+  [class*="chat_"] textarea,
+  [class*="input_"],
+  select
+) {
+  border-radius: var(--radius-input);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+:is(
+  [class*="channelTextArea_"] input:not([type="button"]):focus,
+  [class*="channelTextArea_"] textarea:focus,
+  [class*="chat_"] input:not([type="button"]):focus,
+  [class*="chat_"] textarea:focus,
+  [class*="input_"]:focus
+) {
+  border-color: var(--brand-accent);
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.2);
+}
+
+/* =========================== BUTTONS AND INTERACTIVE INTERFACES =========================== */
+:is(button, [class*="button_"]) {
+  border-radius: var(--radius-button);
+  transition: filter 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+:is([class*="button_"][class*="lookFilled_"]) {
+  box-shadow: var(--shadow-low);
+}
+:is([class*="button_"][class*="lookFilled_"][class*="colorBrand_"]) {
+  background: var(--brand-accent);
+  color: var(--brand-dark) !important;
+  box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+}
+:is([class*="button_"][class*="lookFilled_"][class*="colorBrand_"]:hover) {
+  filter: brightness(0.8);
+  box-shadow: 0 6px 16px rgba(255,255,255,0.2);
+  transform: translateY(-1px);
+}
+
+:is([class*="button_"][class*="actionButton_"]) {
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+:is([class*="button_"][class*="actionButton_"]:hover) {
+  transform: scale(1.15);
+}
+
+/* =========================== NAVIGATION CHANNELS, SERVERS, AND LISTS =========================== */
+:is([class*="listItem_"]) {
+  margin: 4px 0;
+}
+:is([class*="listItem_"]:hover, [class*="channel_"]:hover, [class*="folder_"]:hover) {
+  background-color: var(--hover-bg);
+  transform: translateX(2px);
+  box-shadow: var(--hover-glow);
+}
+:is([class*="modeSelected_"]) {
+  background-color: var(--selected-bg);
+  border-radius: var(--radius-button);
+  box-shadow: var(--shadow-border);
+}
+
+/* =========================== MENTIONS AND SPOILERS =========================== */
+:is([class*="mentioned_"]) {
+  background: rgba(255,255,255,0.08);
+  border-left: 4px solid var(--brand-accent);
+  border-radius: 0 var(--radius-button) var(--radius-button) 0;
+}
+:is([class*="spoilerText_"][class*="hidden_"], [class*="spoilerContent_"][class*="hidden_"]) {
+  background-color: var(--brand-accent);
+  transition: background-color 0.2s ease;
+}
+
+/* =========================== SYSTEM SCROLLBAR TRACKS =========================== */
+:is([class*="scrollerBase_"], [class*="scrollerWrap_"])::-webkit-scrollbar {
+  width: 10px;
+}
+:is([class*="scrollerBase_"], [class*="scrollerWrap_"])::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 0px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+:is([class*="scrollerBase_"], [class*="scrollerWrap_"])::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
+}
+:is([class*="scrollerBase_"], [class*="scrollerWrap_"])::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+  border-radius: 0px;
+  margin: 4px 0;
+}
+
+:is([class*="thin_"])::-webkit-scrollbar {
+  width: 6px;
+}
+:is([class*="thin_"])::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 0px;
+}
+:is([class*="thin_"])::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* =========================== FIX: NAVIGATION ICONS =========================== */
+:is(
+  svg[class*="icon_"],
+  [class*="channel_"] [class*="icon_"] > svg,
+  [class*="channel_"] [class*="iconContainer_"] svg,
+  [class*="titleBar_"] svg[class*="icon_"],
+  [class*="headerBar_"] svg[class*="icon_"],
+  [class*="iconContainer_"],
+  [class*="linkButtonIcon_"]
+):not([class*="guilds_"] *) {
+  color: var(--brand-accent) !important;
+  fill: var(--brand-accent) !important;
+}
+
+[class*="guilds_"] svg,
+[class*="guilds_"] foreignObject {
+  color: unset !important;
+  fill: unset !important;
+}
+
+/* =========================== USER AVAILABILITY STATUS ARRAYS =========================== */
+:is(
+  [class*="statusOnline_"] rect,
+  [class*="avatarWrapper_"] rect[fill="#23a55a"],
+  [class*="mask_"] rect[fill="#23a55a"],
+  [class*="avatar_"] circle[fill="#23a55a"]
+) {
+  fill: var(--status-online);
+}
+:is(
+  [class*="statusIdle_"] rect,
+  [class*="avatarWrapper_"] rect[fill="#f0b232"],
+  [class*="mask_"] rect[fill="#f0b232"],
+  [class*="avatar_"] circle[fill="#f0b232"]
+) {
+  fill: var(--status-idle);
+}
+:is(
+  [class*="statusDnd_"] rect,
+  [class*="avatarWrapper_"] rect[fill="#f23f43"],
+  [class*="mask_"] rect[fill="#f23f43"],
+  [class*="avatar_"] circle[fill="#f23f43"]
+) {
+  fill: var(--status-dnd);
+}
+:is(
+  [class*="statusOffline_"] rect,
+  [class*="avatarWrapper_"] rect[fill="#80848e"],
+  [class*="mask_"] rect[fill="#80848e"],
+  [class*="avatar_"] circle[fill="#80848e"]
+) {
+  fill: var(--status-offline);
+}
+:is(
+  [class*="avatarWrapper_"] rect[fill="#593695"],
+  [class*="mask_"] rect[fill="#593695"],
+  [class*="avatar_"] circle[fill="#593695"]
+) {
+  fill: var(--status-streaming);
+}
+
+:is([class*="avatarWrapper_"] [class*="mask_"] [class*="status_"], [class*="avatar_"] + [class*="status_"]) {
+  border-radius: var(--radius-round);
+}
+
+/* =========================== PROFILE MODALS, POPUPS, AND TOAST WRAPPERS =========================== */
+:is(
+  [class*="userPopout_"],
+  [class*="userProfileModal_"],
+  [class*="profile_"],
+  [class*="userInfo_"],
+  [class*="userPanel_"],
+  [class*="accountProfile_"],
+  [class*="profileCard_"],
+  [class*="modal_"],
+  [class*="root_"],
+  [class*="popout_"],
+  [class*="card_"],
+  [class*="toast_"] [class*="inner_"]
+) {
+  border-radius: 8px;
+  box-shadow: var(--shadow-high), var(--shadow-border);
+}
+
+:is([class*="userProfileOuter_"], [class*="userPanel_"], [class*="profilePanel_"]) {
+  background: transparent;
+  border: none;
+}
+
+:is([class*="userProfileModalInner_"], [class*="userProfileInner_"]) {
+  background: rgba(15,15,15,0.85);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.8);
+  border: var(--glass-border);
+}
+
+:is([class*="banner_"], [class*="profileBanner_"], [class*="userBanner_"]) {
+  border-radius: 8px 8px 0 0;
+  mask-image: linear-gradient(rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+}
+
+[class*="profileBadges_"] {
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(5px);
+  border-radius: 4px;
+  padding: 4px;
+}
+
+/* =========================== ACCENT TOOLTIPS AND SYSTEM MENUS =========================== */
+:is([class*="tooltip_"], [class*="menu_"]) {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  color: var(--text-normal);
+  border-radius: var(--radius-button);
+  box-shadow: var(--shadow-high), var(--shadow-border);
+}
+[class*="tooltipPointer_"] {
+  border-top-color: var(--glass-bg);
+}
+:is([class*="tooltip_"] [class*="muted_"]) {
+  color: var(--text-muted);
+}
+
+/* =========================== UTILITY WORKSPACE ICONS AND INDICATORS =========================== */
+:is([class*="guilds_"] [class*="pill_"]) {
+  background: var(--brand-accent);
+  border-radius: 0 6px 6px 0;
+}
+
+/* =========================== TAB PILLS, VALUE METERS, AND REACTION CONTAINERS =========================== */
+:is([class*="tabBar_"] [class*="tab_"], [class*="topPill_"] [class*="tab_"]) {
+  border-radius: 4px;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+:is([class*="tabBar_"] [class*="tab_"][class*="selected_"]) {
+  background: var(--selected-bg);
+  box-shadow: var(--shadow-border);
+}
+:is([class*="searchBar_"], [class*="search_"]) {
+  border-radius: 4px;
+  background: var(--bg-tertiary);
+}
+:is([class*="markup_"] code, [class*="codeBlock_"], [class*="blockquoteContainer_"]) {
+  border-radius: var(--radius-input);
+  background: rgba(255,255,255,0.05);
+}
+[class*="reaction_"] {
+  border-radius: var(--radius-input);
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+[class*="reaction_"]:hover {
+  background: rgba(255,255,255,0.1);
+  transform: scale(1.08);
+}
+:is([class*="numberBadge_"], [class*="unreadPill_"]) {
+  background: var(--brand-accent);
+  color: var(--brand-dark);
+  border-radius: var(--radius-button);
+  box-shadow: 0 2px 6px rgba(255,255,255,0.2);
+}
+:is([class*="separator_"], [class*="divider_"]) {
+  background: rgba(255,255,255,0.1);
+}
+[class*="progressBar_"] {
+  border-radius: 0px;
+  background: var(--bg-tertiary);
+}
+[class*="progressBar_"] [class*="bar_"] {
+  background: linear-gradient(90deg, #555555, #ffffff);
+  border-radius: 0px;
+}
+
+/* =========================== SPOTIFY MEDIA AUDIO TRACK RULES =========================== */
+:is([class*="mediaBarProgress_"], div[class*="barFill_"]) {
+  background: var(--brand-accent);
+}
+[class*="mediaBarGrabber_"] {
+  background: var(--bg-primary);
+  border: 2px solid var(--brand-accent);
+  box-shadow: 0 0 8px rgba(255,255,255,0.3);
+}
+:is([class*="mediaBarTrack_"], div[class*="barTrack_"]) {
+  background: rgba(255,255,255,0.1);
+}
+
+/* =========================== UI DEBLOAT MODULE =========================== */
+[href="/nitro"],
+[href="/shop"],
+[href="/quests"] {
+  display: none;
+}
+:is(
+  [class*="buttons_"] button[aria-label*="regalo"],
+  [class*="buttons_"] button[aria-label*="gift"],
+  [class*="giftAction_"]
+) {
+  display: none;
+}
+:is(
+  [class*="appLauncher_"],
+  [class*="buttons_"] button[aria-label*="aplicaciones"],
+  [class*="buttons_"] button[aria-label*="App Launcher"],
+  [class*="activityCommandLauncher_"]
+) {
+  display: none;
+}
+
+/* =========================== "DARKCORE" LOADING INTRO SCREEN =========================== */
+:is([class*="container_"][class*="splash_"], [class*="splashBackground_"]) {
+  background-color: var(--bg-primary);
+}
+:is([class*="text_"][class*="splash_"], [class*="ready_"]) {
+  font-size: 0;
+  color: transparent;
+}
+:is([class*="ready_"]::before, [class*="text_"][class*="splash_"]::after) {
+  content: "D A R K C O R E";
+  font-size: 32px;
+  font-family: 'Space Mono', monospace;
+  font-weight: bold;
+  letter-spacing: 6px;
+  background: linear-gradient(90deg, #333333 0%, #ffffff 25%, #888888 50%, #ffffff 75%, #333333 100%);
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 0 12px rgba(255,255,255,0.2);
+  animation: void-shine 3s ease-in-out infinite alternate;
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  will-change: background-position, text-shadow;
+}
+@keyframes void-shine {
+  0% {
+    background-position: 0% center;
+    text-shadow: 0 0 8px rgba(255,255,255,0.1);
+  }
+  100% {
+    background-position: 200% center;
+    text-shadow: 0 0 16px rgba(255,255,255,0.4);
+  }
+}
+
+/* =========================== FLOATING INTERACTIVE TYPING FEEDBACK =========================== */
+[class*="form_"] {
+  position: relative;
+}
+[class*="typing_"] {
+  position: absolute;
+  top: -34px;
+  left: 16px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: var(--glass-border);
+  border-radius: 4px;
+  padding: 5px 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.1);
+  font-family: 'Space Mono', monospace;
+  width: fit-content;
+  z-index: 10;
+  pointer-events: none;
+  animation: float-up 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  will-change: transform, opacity;
+}
+[class*="typing_"] [class*="base_"] {
+  background: transparent;
+}
+@keyframes float-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================== ACTION TOAST OVERLAYS =========================== */
+[class*="toast_"] {
+  border-radius: 4px;
+  background: var(--bg-floating);
+  box-shadow: var(--shadow-high);
+}
+:is([class*="text-xs_"], [class*="text-sm_"], small, [class*="timestamp_"], [class*="channelName_"]) {
+  letter-spacing: 0.01em;
+  word-spacing: 0.02em;
+}
+
+/* =========================== ACCESSIBILITY: HARD HARDWARE MOTION PREFERENCES =========================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  :is([class*="ready_"]::before, [class*="text_"][class*="splash_"]::after) {
+    animation: none;
+    text-shadow: none;
+  }
+  [class*="typing_"] {
+    animation: none;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
